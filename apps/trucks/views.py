@@ -1,3 +1,11 @@
-from django.shortcuts import render
+from rest_framework import generics
 
-# Create your views here.
+from apps.trucks.models import Truck
+from apps.trucks.serializers import TruckSerializer
+from utils.mixins import VehicleAPIViewMixin
+
+
+class TruckAPIView(generics.GenericAPIView, VehicleAPIViewMixin):
+
+    serializer_class = TruckSerializer
+    queryset = Truck.objects.all()
