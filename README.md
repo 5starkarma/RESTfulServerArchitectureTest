@@ -1,6 +1,10 @@
+[![Build Status](https://travis-ci.org/5starkarma/RESTfulServerArchitectureTest.svg?branch=master)](https://travis-ci.org/5starkarma/video-razor) [![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
+
 # RESTful Server Architecture Test
 
 A coding test for Bixly Python/Django Back-end position.
+
+---
 
 ### Installing and Testing Locally
 ```
