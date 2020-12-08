@@ -14,8 +14,8 @@ class CarAPIView(generics.GenericAPIView,
 
     serializer_class = CarSerializer
     queryset = Car.objects.all()
-    lookup_field = 'id'
     permission_classes = (IsAuthenticated,)
+    lookup_field = 'id'
 
     def get(self, request, id=None):
         if id:
