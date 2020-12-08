@@ -11,4 +11,14 @@ class TestViews(TestSetup):
         response = self.client.post(self.create_url,
                                     self.user_data,
                                     format='json')
+        self.assertEqual(response.data['username'], self.user_data['username'])
         self.assertEqual(response.status_code, 201)
+
+    def test_user_cannot_register_twice(self):
+        response = self.client.post(self.create_url,
+                                    self.user_data,
+                                    format='json')
+        second_response = self.client.post(self.create_url,
+                                           self.user_data,
+                                           format='json')
+        self.assertEqual(second_response.status_code, 400)
