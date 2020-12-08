@@ -28,8 +28,8 @@ python3 manage.py migrate
 python3 manage.py runserver
 ```
 ## Test APIs using curl
-###Create user
-####POST
+### Create user
+#### POST
 ```yaml
 {
     "username": "test_user",
@@ -39,9 +39,9 @@ python3 manage.py runserver
 ```
 http://127.0.0.1:8000/users/create/
 ```
-###Get JWT
+### Get JWT
 
-####POST
+#### POST
 ```yaml
 {
     "username": "test_user",
