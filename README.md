@@ -31,7 +31,7 @@ python3 manage.py migrate
 ```
 python3 manage.py runserver
 ```
-## Test APIs using curl
+## Test APIs using PostMan
 ### Create user
 #### POST
 ```yaml
