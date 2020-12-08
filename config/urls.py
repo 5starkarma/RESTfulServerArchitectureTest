@@ -16,6 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
+
+
 urlpatterns = [
     # path('', landing, name='garage'),
     path('admin/doc/', include('django.contrib.admindocs.urls')),
@@ -26,4 +32,8 @@ urlpatterns = [
     path('', include('apps.cars.urls')),
     path('', include('apps.trucks.urls')),
     path('', include('apps.users.urls')),
+
+    # rest jwt token auth
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
