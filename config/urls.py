@@ -22,5 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # include all app urls
-    path('', include('apps.companies.urls')),
+    path('', include('apps.cars.urls')),
+    path('', include('apps.garage.urls')),
+    path('', include('apps.users.urls')),
 ]
