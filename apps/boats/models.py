@@ -4,7 +4,7 @@ from django.db import models
 class Boat(models.Model):
     make = models.CharField(max_length=64, null=True)
     model = models.CharField(max_length=64, null=True)
-    year = models.PositiveSmallIntegerField(null=True)
+    year = models.PositiveSmallIntegerField(null=True)  # 1800 - (this year + 1)
     length = models.CharField(max_length=64, null=True)
     width = models.CharField(max_length=64, null=True)
     hin = models.CharField(max_length=128, null=True)

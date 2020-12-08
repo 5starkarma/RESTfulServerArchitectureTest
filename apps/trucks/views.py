@@ -2,7 +2,7 @@ from rest_framework import generics
 
 from apps.trucks.models import Truck
 from apps.trucks.serializers import TruckSerializer
-from utils.mixins import VehicleAPIViewMixin
+from apps.utils.mixins import VehicleAPIViewMixin
 
 
 class TruckAPIView(generics.GenericAPIView, VehicleAPIViewMixin):
