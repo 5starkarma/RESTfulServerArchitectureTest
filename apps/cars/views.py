@@ -1,33 +1,12 @@
-from rest_framework import generics, mixins
-from rest_framework.permissions import IsAuthenticated
+from rest_framework import generics
 
 from apps.cars.models import Car
 from apps.cars.serializers import CarSerializer
+from utils.mixins import VehicleAPIViewMixin
 
 
-class CarAPIView(generics.GenericAPIView,
-                 mixins.CreateModelMixin,
-                 mixins.DestroyModelMixin,
-                 mixins.ListModelMixin,
-                 mixins.RetrieveModelMixin,
-                 mixins.UpdateModelMixin):
+class CarAPIView(generics.GenericAPIView, VehicleAPIViewMixin):
 
     serializer_class = CarSerializer
     queryset = Car.objects.all()
-    permission_classes = (IsAuthenticated,)
-    lookup_field = 'id'
-
-    def get(self, request, id=None):
-        if id:
-            return self.retrieve(request)
-        return self.list(request)
-
-    def post(self, request):
-        return self.create(request)
-
-    def put(self, request, id=None):
-        return self.update(request, id)
-
-    def delete(self, request, id):
-        return self.destroy(request, id)
 
