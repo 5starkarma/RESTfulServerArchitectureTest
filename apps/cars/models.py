@@ -13,3 +13,6 @@ class Car(models.Model):
     current_mileage = models.PositiveIntegerField(null=True)
     service_interval = models.PositiveIntegerField(null=True)
     next_service = models.PositiveIntegerField(null=True)
+
+    def __str__(self):
+        return f'{self.make} {self.model}, VIN: {self.vin}'
