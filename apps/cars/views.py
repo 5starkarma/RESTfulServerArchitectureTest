@@ -1,4 +1,5 @@
 from rest_framework import generics, mixins
+from rest_framework.permissions import IsAuthenticated
 
 from apps.cars.models import Car
 from apps.cars.serializers import CarSerializer
@@ -14,6 +15,7 @@ class CarAPIView(generics.GenericAPIView,
     serializer_class = CarSerializer
     queryset = Car.objects.all()
     lookup_field = 'id'
+    permission_classes = (IsAuthenticated,)
 
     def get(self, request, id=None):
         if id:
