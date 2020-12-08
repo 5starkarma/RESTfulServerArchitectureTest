@@ -4,4 +4,3 @@ from apps.trucks.models import Truck
 
 
 admin.site.register(Truck)
-
