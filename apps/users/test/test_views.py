@@ -13,6 +13,7 @@ class TestViews(TestSetup):
                                     format='json')
         self.assertEqual(response.data['username'], self.user_data['username'])
         self.assertEqual(response.status_code, 201)
+        self.assertEqual(len(response.data), 2)
 
     def test_user_cannot_register_twice(self):
         response = self.client.post(self.create_url,
