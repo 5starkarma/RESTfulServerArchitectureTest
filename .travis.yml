@@ -12,10 +12,8 @@ before_install:
 env:
       -DB=sqlite
 
-#before_script:
-#  - mysql -e 'create database test;' -u root
-
 script:
+  - python manage.py makemigrations users
   - python manage.py makemigrations
   - python manage.py migrate
   - python manage.py test
